@@ -1,4 +1,4 @@
-import "./globals.css";
+// import './global.css'
 
 export const metadata = {
   title: 'Next.js',
@@ -12,7 +12,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <h2 className="bg-gray-800 text-white p-10">Header</h2>
+        <div>{children}</div>
+      </body>
     </html>
   )
 }
