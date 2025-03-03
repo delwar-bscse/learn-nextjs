@@ -1,13 +1,17 @@
+import Link from 'next/link'
 import React from 'react'
 
 export default function Products() {
+  const productId: number = 100;
   return (
     <div>
+      <Link href="/">Go Home</Link>
       <h1>Products List</h1>
-      <ul>
-        <li>Product 1</li>
-        <li>Product 2</li>
-        <li>Product 3</li>
+      <ul >
+        <Link href="/products/1">Product 1</Link>
+        <Link href="/products/2">Product 2</Link>
+        <Link href="/products/3" replace>Product 3</Link>
+        <Link href={`/products/${productId}`}>Product {productId}</Link>
       </ul>
     </div>
   )
