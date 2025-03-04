@@ -1,4 +1,6 @@
+import Navbar from '@/components/Navbar'
 import './globals.css'
+//21 no videos
 
 export const metadata = {
   title: {
@@ -16,8 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <h2 className="bg-gray-800 text-white p-10">Header</h2>
-        <div>{children}</div>
+        <Navbar />
+        <div className='px-10 py-20'>
+          {children}
+        </div>
       </body>
     </html>
   )

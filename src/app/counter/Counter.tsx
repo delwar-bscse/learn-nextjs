@@ -6,11 +6,13 @@ const Counter = () => {
   const [count, setCount] = useState(0);
 
   return (
-    <div>
-      <h1>Count: {count}</h1>
-      <button onClick={() => setCount(count + 1)}>Increment</button>
-      <button onClick={() => setCount(count - 1)}>Decrement</button>
-      <button onClick={() => setCount(0)}>Reset</button>
+    <div className='flex flex-col items-center gap-5'>
+      <h1 className='text-2xl font-bold text-blue-900'>Count: {count}</h1>
+      <div className='flex items-center gap-3'>
+        <button className='px-3 py-1 border rounded-sm ' onClick={() => setCount(count + 1)}>+</button>
+        <button className='px-3 py-1 border rounded-sm ' onClick={() => setCount(0)}>0</button>
+        <button className='px-3 py-1 border rounded-sm ' onClick={() => setCount(count - 1)}>-</button>
+      </div>
     </div>
   )
 }
