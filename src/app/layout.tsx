@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar'
 import './globals.css'
+import { ErrorWrapper } from './error-wrapper'
 //21 no videos
 
 export const metadata = {
@@ -20,7 +21,9 @@ export default function RootLayout({
       <body>
         <Navbar />
         <div className='px-10 py-20'>
-          {children}
+          <ErrorWrapper>
+            {children}
+          </ErrorWrapper>
         </div>
       </body>
     </html>

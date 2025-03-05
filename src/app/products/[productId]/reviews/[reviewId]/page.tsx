@@ -1,12 +1,20 @@
 import { notFound } from "next/navigation";
 
-export default async function Review({ params }: { params: { productId: string, reviewId: string } }) {
+function getRandomInt(count: number) {
+  return Math.floor(Math.random() * count);
+}
+
+export default async function Review({ params }: { params: Promise<{ productId: string; reviewId: string }> }) {
   const { productId, reviewId } = await params;
-  console.log(productId, reviewId);
+
+  const random = getRandomInt(2);
+  if (random === 1) {
+    throw new Error("Error loading review");
+  }
 
   if (parseInt(reviewId) > 1000) {
     notFound();
-    return null;
+    return null; // Return null to prevent further rendering
   }
 
   return (
